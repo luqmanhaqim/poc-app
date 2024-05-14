@@ -1,7 +1,9 @@
 steps:
   - label: "Checkout and List Files"
     command:
-      - "git clone https://github.com/your-username/your-repo.git ."
       - "ls -la"
+      - "pwd"
+      - "echo 'Hello, world!' > myfile.txt"
+      - "cat myfile.txt"
     agents:
       queue: "default"
