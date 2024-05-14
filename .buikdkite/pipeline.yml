@@ -1,0 +1,7 @@
+steps:
+  - label: "Checkout and List Files"
+    command:
+      - "git clone https://github.com/your-username/your-repo.git ."
+      - "ls -la"
+    agents:
+      queue: "default"
