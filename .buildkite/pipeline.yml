@@ -5,5 +5,14 @@ steps:
       - "pwd"
       - "echo 'Hello, world!' > myfile.txt"
       - "cat myfile.txt"
+  
+  
+  - label: "store files in artifacts"
+    command: 
+      - "echo 'test artifatcs' > artifacts.txt"
+    artifact_paths: 
+       - artifacts.txt
+
+
     agents:
       queue: "default"
