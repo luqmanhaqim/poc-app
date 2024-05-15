@@ -14,6 +14,14 @@ steps:
     artifact_paths: 
        - artifacts.txt
 
+  - label: "Build docker image"
+    command: 
+      - cd services; cd BE; docker run build -t be-test-image .
+      - docker images 
+      - "buildkite-agent artifact upload 'artifacts.txt'"
+    artifact_paths: 
+       - artifacts.txt
+
 
     agents:
       queue: "default"
