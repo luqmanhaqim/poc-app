@@ -18,6 +18,14 @@ steps:
     artifact_paths: 
        - artifacts.txt
 
+  - block: "Approval Step"
+    prompt: "Please approve to proceed with Docker image build"
+    fields:
+      - text: "Reason for approval"
+        key: "approval_reason"
+        hint: "Enter the reason for approving this step"
+        required: true
+
   - label: "Build docker image"
     command: 
       - "cd services/BE"
