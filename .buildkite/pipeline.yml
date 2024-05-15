@@ -1,3 +1,6 @@
+env:
+  IMAGE_NAME: "be-test-image"
+
 steps:
   - label: "Checkout and List Files"
     command:
@@ -19,9 +22,15 @@ steps:
     command: 
       - "cd services/BE"
       - "ls -la"
-      -  "docker build -t be-test-image ."
+      -  "docker build -t $IMAGE_NAME ."
       - "docker images" 
 
+  - wait
+
+  - label: "cleanup created image"
+    command:
+      - "docker rmi $IMAGE_NAME:latest"
+      - "docker images"
 
     agents:
       queue: "default"
