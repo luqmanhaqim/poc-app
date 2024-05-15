@@ -17,6 +17,9 @@ steps:
       - "docker --version"
     artifact_paths: 
        - artifacts.txt
+    agents:
+      que: "docker"
+
 
   - block: "Approval Step"
     prompt: "Please approve to proceed with Docker image build"
