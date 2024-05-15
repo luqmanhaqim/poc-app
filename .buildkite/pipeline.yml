@@ -12,7 +12,7 @@ steps:
   
   - label: "store files in artifacts"
     command: 
-      - "echo 'test artifatcs' > artifacts.txt"
+      - "echo 'hi shuvo' > artifacts.txt"
       - "buildkite-agent artifact upload 'artifacts.txt'"
       - "docker --version"
     artifact_paths: 
