@@ -10,11 +10,12 @@ steps:
       - "cat myfile.txt"
   
   - label: install docker on runner 
-    
     plugins:
       - docker#v3.2.0:
           image: "node:22"
           workdir: /app
+          volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
     command: 
       - "yarn install && yarn" 
       - "docker build -t $IMAGE_NAME ."
