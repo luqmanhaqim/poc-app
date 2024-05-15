@@ -11,6 +11,7 @@ steps:
     command: 
       - "echo 'test artifatcs' > artifacts.txt"
       - "buildkite-agent artifact upload 'artifacts.txt'"
+      - "docker --version"
     artifact_paths: 
        - artifacts.txt
 
@@ -20,8 +21,6 @@ steps:
       - "ls -la"
       -  "docker run build -t be-test-image ."
       - "docker images" 
-    artifact_paths: 
-       - artifacts.txt
 
 
     agents:
