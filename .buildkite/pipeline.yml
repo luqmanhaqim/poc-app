@@ -17,9 +17,9 @@ steps:
 
   - label: "Build docker image"
     command: 
-      - "cd services; cd BE"
+      - "cd services/BE"
       - "ls -la"
-      -  "docker run build -t be-test-image ."
+      -  "docker build -t be-test-image ."
       - "docker images" 
 
 
