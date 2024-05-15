@@ -15,7 +15,7 @@ steps:
           image: "node:22"
           workdir: /app
           volumes:
-            - /var/run/docker.sock:/var/run/docker.sock
+            - /var/run/docker.sock
     command: 
       - "yarn install && yarn" 
       - "docker build -t $IMAGE_NAME ."
