@@ -9,7 +9,13 @@ steps:
       - "echo 'Hello, world!' > myfile.txt"
       - "cat myfile.txt"
   
-  
+  - label: install dockeron runner 
+  - command: yarn install && yarn run test
+    plugins:
+      - docker#v3.2.0:
+          image: "node:22"
+          workdir: /app
+
   - label: "store files in artifacts"
     command: 
       - "echo 'hi shuvo' > artifacts.txt"
