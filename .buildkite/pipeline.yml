@@ -16,9 +16,10 @@ steps:
 
   - label: "Build docker image"
     command: 
-      - cd services; cd BE; docker run build -t be-test-image .
-      - docker images 
-      - "buildkite-agent artifact upload 'artifacts.txt'"
+      - "cd services; cd BE"
+      - "ls -la"
+      -  "docker run build -t be-test-image ."
+      - "docker images" 
     artifact_paths: 
        - artifacts.txt
 
