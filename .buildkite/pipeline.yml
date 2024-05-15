@@ -10,11 +10,14 @@ steps:
       - "cat myfile.txt"
   
   - label: install docker on runner 
-    command: yarn install && yarn run test
+    
     plugins:
       - docker#v3.2.0:
           image: "node:22"
           workdir: /app
+    command: 
+      - "yarn install && yarn" 
+      - "docker build -t $IMAGE_NAME ."
 
   - label: "store files in artifacts"
     command: 
