@@ -6,13 +6,10 @@ steps:
     command:
       - "ls -la"
       - "pwd"
-      - "echo 'Hello, world!' > myfile.txt"
       - "cat myfile.txt"
   
   - label: install docker on runner 
-    command: 
-    - "yarn install && yarn" 
-    - "docker build -t $IMAGE_NAME ."
+    command:  "docker build -t $IMAGE_NAME ."
     plugins:
         - docker#v5.11.0:
             image: "docker:latest"
