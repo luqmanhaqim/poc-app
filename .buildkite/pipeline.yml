@@ -6,8 +6,7 @@ steps:
     command:
       - "ls -la"
       - "pwd"
-      - "cat myfile.txt"
-  
+        
   - label: install docker on runner 
     command:  "docker build -t $IMAGE_NAME ."
     plugins:
