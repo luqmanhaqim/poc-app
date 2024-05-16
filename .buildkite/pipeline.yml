@@ -6,35 +6,35 @@ steps:
     command:
       - "ls -la"
       - "pwd"
-        
-  - label: install docker on runner 
-    command:  "docker build -t $IMAGE_NAME ."
-    plugins:
-        - docker#v5.11.0:
-            image: "docker:latest"
-            always-pull: true
-            volumes:
-              - "/var/run/docker.sock:/var/run/docker.sock"
+
+  # - label: install docker on runner 
+  #   command:  "docker build -t $IMAGE_NAME ."
+  #   plugins:
+  #       - docker#v5.11.0:
+  #           image: "docker:latest"
+  #           always-pull: true
+  #           volumes:
+  #             - "/var/run/docker.sock:/var/run/docker.sock"
 
 
-  - label: "store files in artifacts"
-    command: 
-      - "echo 'hi shuvo' > artifacts.txt"
-      - "buildkite-agent artifact upload 'artifacts.txt'"
-      - "docker --version"
-    artifact_paths: 
-       - artifacts.txt
-    agents:
-      queue: "default"
+  # - label: "store files in artifacts"
+  #   command: 
+  #     - "echo 'hi shuvo' > artifacts.txt"
+  #     - "buildkite-agent artifact upload 'artifacts.txt'"
+  #     - "docker --version"
+  #   artifact_paths: 
+  #      - artifacts.txt
+  #   agents:
+  #     queue: "default"
 
 
-  - block: "Approval Step"
-    prompt: "Please approve to proceed with Docker image build"
-    fields:
-      - text: "Reason for approval"
-        key: "approval_reason"
-        hint: "Enter the reason for approving this step"
-        required: true
+  # - block: "Approval Step"
+  #   prompt: "Please approve to proceed with Docker image build"
+  #   fields:
+  #     - text: "Reason for approval"
+  #       key: "approval_reason"
+  #       hint: "Enter the reason for approving this step"
+  #       required: true
 
   - label: "Build docker image"
     command: 
