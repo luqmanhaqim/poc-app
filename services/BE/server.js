@@ -45,7 +45,7 @@ app.get('/api/users/register/health', (req, res) => {
 
 
 app.get('/', (req, res) => {
-    res.send(`Default entry point`);
+    res.send(`Default entry point #conflict causer`);
     console.log("health check")
   });
 
