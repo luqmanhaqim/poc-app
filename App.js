@@ -46,7 +46,7 @@ function Home() {
         <p>Welcome to your Kubernetes Dashboard</p>
       </header>
       <section className="content">
-<p>This is your main area where you can manage your Kubernetes deployments, view statistics, and access system updates.</p>
+<p>This is your main area where you can manage your Kubernetes deployments, view statistics walaweh, and access system updates.</p>
  </section>
     </div>
   );
